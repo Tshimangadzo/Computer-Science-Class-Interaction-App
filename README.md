@@ -1,0 +1,2 @@
+# Computer-Science-Class-Interaction-App
+App that allows better interaction between people studying computer science. The app allow people to post questions related to computer science, and allow people to post answers to questions that were previously posted on the system. The system also allow people to vote for questions and answers. When people are presented with lists of questions and answers, these questions and answers listed in order of the number of votes they have received
