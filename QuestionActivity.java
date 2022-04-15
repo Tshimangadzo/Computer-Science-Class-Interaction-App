@@ -51,7 +51,7 @@ public class QuestionActivity extends Activity implements OnClickListener, async
 			    String  meQuestion = i.getStringExtra("Quest_ID");
 				nams.add(new BasicNameValuePair("Quest_ID", meQuestion));
 				nams.add(new BasicNameValuePair("Answer", quest));
-				new AsyncHttpPost(QuestionActivity.this).execute("http://lamp.ms.wits.ac.za/~800361/addAnswer.php",nams);
+				new AsyncHttpPost(QuestionActivity.this).execute("@server",nams);
 				edit.setText("");
 				Toast.makeText(QuestionActivity.this, "Answer has been added", Toast.LENGTH_LONG).show();
 						
@@ -69,7 +69,7 @@ public class QuestionActivity extends Activity implements OnClickListener, async
 	    value = i.getStringExtra("user_name");
 		List<NameValuePair> nams = new ArrayList<NameValuePair>();
 		nams.add(new BasicNameValuePair("Quest_ID", meQuestion));	
-		new AsyncHttpPost(this).execute("http://lamp.ms.wits.ac.za/~800361/listAnswer.php",nams);
+		new AsyncHttpPost(this).execute("@server",nams);
 	}
 	@Override
 	public void onpost(String json) {
@@ -100,7 +100,7 @@ public class QuestionActivity extends Activity implements OnClickListener, async
 						List<NameValuePair> nams1 = new ArrayList<NameValuePair>();	
 						nams1.add(new BasicNameValuePair("Answer_ID",A_ID));
 						nams1.add(new BasicNameValuePair("username", STORE.user_name));
-						new AsyncHttpPost(QuestionActivity.this).execute("http://lamp.ms.wits.ac.za/~800361/voteAnswer.php",nams1);
+						new AsyncHttpPost(QuestionActivity.this).execute("@server",nams1);
 						Toast.makeText(getApplicationContext(), A_ID, Toast.LENGTH_LONG).show();
 					}
 				});
@@ -126,7 +126,7 @@ public class QuestionActivity extends Activity implements OnClickListener, async
 	    String  meQuestion = i.getStringExtra("Quest_ID");
 		nams.add(new BasicNameValuePair("Quest_ID", meQuestion));
 		nams.add(new BasicNameValuePair("Answer", quest));
-		new AsyncHttpPost(QuestionActivity.this).execute("http://lamp.ms.wits.ac.za/~800361/addAnswer.php",nams);
+		new AsyncHttpPost(QuestionActivity.this).execute("@server",nams);
 		edit.setText("");	
 	}
 }
