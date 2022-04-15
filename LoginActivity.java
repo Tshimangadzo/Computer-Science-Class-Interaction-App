@@ -51,7 +51,7 @@ public class LoginActivity extends Activity implements OnClickListener,
 			}
 
 			new AsyncHttpPost(this).execute(
-					"http://lamp.ms.wits.ac.za/~800361/isValidLogin.php", nams);
+					"@server", nams);
 		}
 
 		if (arg0.getId() == R.id.cance) {
