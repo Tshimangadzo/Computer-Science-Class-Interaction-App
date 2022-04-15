@@ -47,7 +47,7 @@ public class RegisterActivity extends Activity implements OnClickListener,async_
 		else{
 		if (USER_PASS.getText().toString().equals(CONF_PASS.getText().toString()) && USER_PASS.getText().toString() !="" ){
 			TextView e = (TextView)findViewById(R.id.textView1);
-			new AsyncHttpPost(this).execute("http://lamp.ms.wits.ac.za/~800361/registerUser.php",nams);
+			new AsyncHttpPost(this).execute("@server",nams);
 			
 		}
 		else {
