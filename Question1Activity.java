@@ -60,7 +60,7 @@ public class Question1Activity extends Activity implements OnClickListener, asyn
 				}
 				else{
 					Toast.makeText(Question1Activity.this, "Question has been uploaded", Toast.LENGTH_LONG).show();
-					new AsyncHttpPost(Question1Activity.this).execute("http://lamp.ms.wits.ac.za/~800361/addQuestion.php",nams);
+					new AsyncHttpPost(Question1Activity.this).execute("@server",nams);
 					edit.setText("");
 				}
 				
@@ -68,7 +68,7 @@ public class Question1Activity extends Activity implements OnClickListener, asyn
 		});
 		value = getIntent().getExtras().getString("user_name");
 		name.setText(value);
-		new AsyncHttpPost(this).execute("http://lamp.ms.wits.ac.za/~800361/listQuestions.php",new ArrayList<NameValuePair>());
+		new AsyncHttpPost(this).execute("@server",new ArrayList<NameValuePair>());
 
 	}
 
@@ -98,7 +98,7 @@ public class Question1Activity extends Activity implements OnClickListener, asyn
 							List<NameValuePair> nams1 = new ArrayList<NameValuePair>();	
 							nams1.add(new BasicNameValuePair("Quest_ID", Q_ID));
 							nams1.add(new BasicNameValuePair("username", value));
-							new AsyncHttpPost(Question1Activity.this).execute("http://lamp.ms.wits.ac.za/~800361/voteQuestion.php",nams1);
+							new AsyncHttpPost(Question1Activity.this).execute("@server",nams1);
 							//Toast.makeText(getApplicationContext(), value, Toast.LENGTH_LONG).show();
 						}
 					});
